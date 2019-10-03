@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更新结果</title>
+</head>
+<body>
+    <div>
+    <table border="1">
+            <thead>
+                <tr>
+                    <th>文件名</th>
+                    <th>文件路径</th>
+                    <th>修改日期</th>
+                    <th>文件分类</th>
+                    <th>标签</th>
+                </tr>
+            </thead>
+            {% for line in file_list %}
+            <tr>
+                <td>{{ line.FileName_text }}</td>
+                <td>{{ line.FilePath_text }}</td>
+                <td>{{ line.modify_date }}</td>
+                {% if line.status == 1 %}
+                <td>opencv</td>
+                {% elif line.status == 2 %}
+                <td>python</td>
+                {% elif line.status == 3 %}
+                <td>c++</td>
+                {% elif line.status == 4 %}
+                <td>ROS</td>
+                {% elif line.status == 5 %}
+                <td>Linux</td>
+                {% elif line.status == 6 %}
+                <td>计算机视觉</td>
+                {% elif line.status == 7 %}
+                <td>机器学习</td>
+                {% elif line.status == 8 %}
+                <td>Django</td>
+                {% elif line.status == 9 %}
+                <td>数学算法</td>
+                {% else %}
+                <td></td>
+                {% endif %}
+                <td>{{ line.tag_text }}</td>
+            </tr>
+            {% endfor %}
+    </table>
+    </div>
+</body>
+</html>

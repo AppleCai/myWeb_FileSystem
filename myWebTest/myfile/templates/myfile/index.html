@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件管理系统</title>
+    <form action="{% url 'myfile:update' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="excel_filename">
+        <input type="submit" value="更新数据库"/>
+    </form>
+</head>
+<body>
+
+</body>
+</html>
