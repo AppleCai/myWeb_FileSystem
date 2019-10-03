@@ -108,8 +108,8 @@ def update(request):
     compareDesigner(listDataBase,listNow,0)
     compareDesigner(listNow,listDataBase,1)
     # 显示结果
-    #q = BasicInfo.objects.order_by('-modify_date','FileName_text')
-    return render(request, 'myfile/results.html', {'file_list': Filelist_result})
+    q = BasicInfo.objects.order_by('-modify_date','FileName_text')
+    return render(request, 'myfile/results.html', {'file_list': q})
     #return render(request,'myfile/index.html')
 
 
