@@ -5,8 +5,16 @@
     <title>文件管理系统</title>
     <form action="{% url 'myfile:update' %}" method="post">
         {% csrf_token %}
-        <input type="text" name="excel_filename">
         <input type="submit" value="更新数据库"/>
+    </form>
+    <form action="{% url 'myfile:reviewData' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="已在后台修改复习阶段，开始更新复习日期"/>
+    </form>
+    <form action="{% url 'myfile:exportDB' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="excel_filepath" value=d:/AppleFileSystem>
+        <input type="submit" value="导出数据库"/>
     </form>
 </head>
 <body>

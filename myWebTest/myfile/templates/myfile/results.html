@@ -9,6 +9,7 @@
     <table border="1">
             <thead>
                 <tr>
+                    <th>文件号</th>
                     <th>文件名</th>
                     <th>文件路径</th>
                     <th>修改日期</th>
@@ -18,6 +19,7 @@
             </thead>
             {% for line in file_list %}
             <tr>
+                <td>{{ line.FileID }}</td>
                 <td>{{ line.FileName_text }}</td>
                 <td>{{ line.FilePath_text }}</td>
                 <td>{{ line.modify_date }}</td>
@@ -39,6 +41,10 @@
                 <td>Django</td>
                 {% elif line.status == 9 %}
                 <td>数学算法</td>
+                {% elif line.status == 10 %}
+                <td>杂项</td>
+                {% elif line.status == 11 %}
+                <td>忽略</td>
                 {% else %}
                 <td></td>
                 {% endif %}
